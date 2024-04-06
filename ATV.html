@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv</title>
+</head>
+<body>
+    <form>
+        <button onmouseover="funcao()">ok</button>
+        <button onmouseout="funcao3()">oi</button>
+    </form>
+    <div>
+        digite seu nome:<input type="text"id="id2" onchange="funcao2()">
+        digite seu sobrenome:<input type="text"id="id2" onfocus="funcao4()">
+    </div>
+    <p id = "id1">paragrafo1</p>
+    <p id="id2" class = "paragrafo">paragrafo2</p>
+    <script>
+        function funcao(){
+            var elemento=document.querySelector('#id1');
+            elemento.textContent="Novo texto";
+
+
+        }
+        function funcao2(){
+            var elemento2=document.getElementById('id2');
+            elemento2.value=elemento2.value.toUpperCase();
+
+        }
+        function funcao3(){
+            var elemento3 = document.getElementsByClassName('paragrafo')[0];
+            elemento3.textContent="beleza?";
+        }
+        function funcao4() {
+            var elementos = document.getElementsByTagName('input');
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].onfocus = function() {
+                    alert("Campo de entrada focado!");
+                };
+            }
+        }
+    </script>
+</body>
+</html>
